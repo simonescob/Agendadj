@@ -1,3 +1,4 @@
 {
-	"python.pythonPath": "/home/simon/.virtualenvs/webs/bin/python3.5"
+	"python.pythonPath": "/home/simon/.virtualenvs/webs/bin/python3.5",
+	"python.linting.enabled": false
 }
