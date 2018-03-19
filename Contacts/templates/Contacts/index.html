@@ -1,17 +1,25 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>AgendaDJ</title>
-	<link rel="stylesheet" href="{% static "css/style.css" %}">
-</head>
-<body>
+{% extends "base.html" %}
 
-	<h1>Hello {{name}}</h1>
+{% block content %}
 
-	<script src="{% static "js/main.js" %}"></script>
-</body>
-</html>
+	{% include "./create.html" %}
+
+	<h1>All Contacts</h1>
+
+	{% for contact in contacts %}
+
+		<h1 id="{{contact.id}}">{{contact.fname}}</h1>
+		<h3>{{contact.lname}}</h3>
+		<h3>{{contact.phone}}</h3>
+		<h3>{{contact.email}}</h3>
+		<a href="{% url "delete" contact.id %}">delete</a>
+		<a href="{% url "edit" contact.id %}">edit</a>
+
+	{% empty %}
+	
+	{% endfor %}
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}
