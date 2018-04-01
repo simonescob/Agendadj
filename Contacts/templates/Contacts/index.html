@@ -8,10 +8,10 @@
 
 	{% for contact in contacts %}
 
-		<h1 id="{{contact.id}}">{{contact.fname}}</h1>
-		<h3>{{contact.lname}}</h3>
-		<h3>{{contact.phone}}</h3>
-		<h3>{{contact.email}}</h3>
+		<h2 id="{{contact.id}}">{{contact.fname}}</h2>
+		<h3>Last Name: {{contact.lname}}</h3>
+		<h3>Phone: {{contact.phone}}</h3>
+		<h3>Email: {{contact.email}}</h3>
 		<a href="{% url "delete" contact.id %}">delete</a>
 		<a href="{% url "edit" contact.id %}">edit</a>
 
